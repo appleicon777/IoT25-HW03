@@ -14,7 +14,7 @@ Set ESP32 Board at Arduino IDE 2.0, Check if the board operates well with Exampl
 ---
 
 ## Blink Example Video
-(https://youtu.be/your_video_link_here)
+(https://youtube.com/shorts/5IxnP190IlY?si=GDXLIBXNyI5YGVs0)
 
 ---
 
