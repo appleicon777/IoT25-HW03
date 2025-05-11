@@ -1,35 +1,43 @@
 # IoT25-HW03
 
-## Purpose
-Set ESP32 Board at Arduino IDE 2.0, Check if the board operates well with Example Blink
+## ✅ Objective  
+This assignment demonstrates how to read analog values from a potentiometer using the ESP32's built-in ADC (Analog-to-Digital Converter).  
+The goal is to observe value changes through the Serial Monitor as the potentiometer is turned.
 
 ---
 
-## Arduino IDE Setting
-- Board: DOIT ESP32 DEVKIT V1
-- Port: /dev/cu.SLAB_USBtoUART
+## Arduino IDE Configuration  
+- **Board**: DOIT ESP32 DEVKIT V1  
+- **Port**: /dev/cu.SLAB_USBtoUART
 
-![IDE 설정 스크린샷](./images/ide.png)
+![IoT25-HW03](./IoT25-HW03.png)
 
 ---
 
-## Blink Example Video
-(https://youtube.com/shorts/5IxnP190IlY?si=GDXLIBXNyI5YGVs0)
+## Demonstration Video  
+(https://youtube.com/shorts/R5cHmk4Ykco?si=HOqG5db18Kg5j3vZ)
+
+---
+
+## Hardware Setting
+- **Potentiometer**  
+  - Left pin: GND
+  - Right pin: 3.3V
+  - Middle pin: GPIO 34 (analog input)
 
 ---
 
 ## Code
 
-// the setup function runs once when you press reset or power the board
+```cpp
+const int analogPin = 34;
+
 void setup() {
-  // initialize digital pin LED_BUILTIN as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
+  Serial.begin(115200);
 }
 
-// the loop function runs over and over again forever
 void loop() {
-  digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
-  delay(1000);                      // wait for a second
-  digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
-  delay(1000);                      // wait for a second
+  int value = analogRead(analogPin);
+  Serial.println(value);
+  delay(500);
 }
